@@ -20,8 +20,8 @@ public class FileWordAnalyzer {
     }
 
     private List<String> stringAsWordsList() throws IOException {
-        String content = filePartReader.readLines();
-        return Arrays.asList(content.split(" "));
+        String text = filePartReader.readLines();
+        return Arrays.asList(text.split(" "));
     }
 
     public List<String> getWordsContainingSubstring (String subString) throws IOException {
@@ -39,11 +39,11 @@ public class FileWordAnalyzer {
 
     }
 
-    public List<String> getWordsWhichPalindromes () throws IOException {
+    public List<String> getStringsWhichPalindromes() throws IOException {
         List<String> words = stringAsWordsList();
         List<String> palindromeWords = new ArrayList<>();
-        for (String word : words) {
-            if (isPalindrome(word)) {
+        for (String word : words){
+            if (isPalindrome(word)){
                 palindromeWords.add(word);
             }
         }
@@ -59,7 +59,7 @@ public class FileWordAnalyzer {
                 return false;
             }
             startIndex++;
-            endIndex++;
+            endIndex--;
         }
         return true;
     }

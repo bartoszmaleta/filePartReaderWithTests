@@ -20,7 +20,7 @@
   </dependencies>
 
   <properties>
-    <version.java>1.8</version.java>
+    <version.java>1.9</version.java>
     <version.maven.compiler.plugin>3.6.1</version.maven.compiler.plugin>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
@@ -34,8 +34,8 @@
         <version>${version.maven.compiler.plugin}</version>
         <inherited>true</inherited>
         <configuration>
-          <source>${version.java}</source>
-          <target>${version.java}</target>
+          <source>9</source>
+          <target>9</target>
           <compilerArgument>-Xlint:all</compilerArgument>
           <showWarnings>true</showWarnings>
           <showDeprecation>true</showDeprecation>
