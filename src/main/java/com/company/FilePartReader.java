@@ -6,22 +6,22 @@ import java.util.Scanner;
 
 public class FilePartReader {
     private String filepath;
-    private int startLine;
-    private int endLine;
+    private int fromLine;
+    private int toLine;
 
     FilePartReader() {
         filepath = "";
-        startLine = 0;
-        endLine = -1;
+        fromLine = 0;
+        toLine = -1;
     }
 
-    public void init (String filepath, int startLine, int endLine) {
-        if ((startLine < endLine) || (startLine < 1)) {
+    public void setup(String filepath, int fromLine, int toLine) {
+        if ((toLine < fromLine) || (fromLine < 1)) {
             throw new IllegalArgumentException();
         }
         this.filepath = filepath;
-        this.startLine = startLine;
-        this.endLine = endLine;
+        this.fromLine = fromLine;
+        this.toLine = toLine;
     }
 
     public String read () throws IOException {
@@ -41,7 +41,7 @@ public class FilePartReader {
         String[] lines = fileContent.split("\n");
         StringBuilder sb = new StringBuilder();
         for (int i = 0; i < lines.length; i++) {
-            if (i + 1 >= this.startLine && i + 1 <= this.endLine) {
+            if (i + 1 >= this.fromLine && i + 1 <= this.toLine) {
                 sb.append(lines[i]);
                 sb.append("\n");
             }
