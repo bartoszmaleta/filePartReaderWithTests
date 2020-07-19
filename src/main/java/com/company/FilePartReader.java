@@ -43,7 +43,7 @@ public class FilePartReader {
         for (int i = 0; i < lines.length; i++) {
             if (i + 1 >= this.fromLine && i + 1 <= this.toLine) {
                 sb.append(lines[i]);
-                sb.append("\n");
+                sb.append(" ");
             }
         }
         return sb.toString().trim();

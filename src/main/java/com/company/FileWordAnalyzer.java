@@ -31,11 +31,12 @@ public class FileWordAnalyzer {
         List<String> words = stringAsWordsList();
         List<String> wordsContainingSubstring = new ArrayList<>();
         for (String word : words) {
-            if (word.toUpperCase().contains(subString.toLowerCase())) {
+            if (word.toLowerCase().contains(subString.toLowerCase())) {
                 wordsContainingSubstring.add(word);
             }
         }
         return wordsContainingSubstring;
+
     }
 
     public List<String> getWordsWhichPalindromes () throws IOException {
